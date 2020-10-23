@@ -1,0 +1,17 @@
+.center-it {
+  margin: auto;
+  width: 250px;
+  font-size: 35px;
+}
+
+.switch-page {
+  position: relative;
+  top: 19px;
+  color: green;
+}
+
+.box {
+  padding-right: 50;
+  padding-left: 50px;
+
+}
