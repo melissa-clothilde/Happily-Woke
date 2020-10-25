@@ -3,7 +3,7 @@ const router = express.Router();
 const News = require("../models/news");
 const axios = require("axios");
 require('dotenv').config();
-const config = require('../config/keys');
+const config = require("../config/keys");
 const auth = require("../middleware/auth")
 
 
