@@ -4,11 +4,19 @@ import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
-import { StoreProvider } from "./utils/GlobalState";
+import AuthContext from "./context/authContext";
 
 const App = () => {
+  const [authenticated, setAuthenticated] = useState(null);
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState(localStorage.setItem("token", ""));
+
+  // const setTokens = () => {
+  //   localStorage.setItem("token", action.payload.token);
+  // }
   return (
-    <StoreProvider>
+    <AuthContext.Provider value={{ authenticated, user, token }
+}>
       <Router>
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
@@ -16,7 +24,7 @@ const App = () => {
         <Route exact path="/home" component={Home} />
         <Route path="/saved" component={Saved} />
       </Router>
-    </StoreProvider>
+    </AuthContext.Provider>
   );
 };
 

@@ -1,13 +1,12 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
 import positive from "../../components/images/positive.png";
 import "./style.css";
-import { useStoreContext } from "../../utils/GlobalState";
-import { SIGNUP_SUCCESS, SIGNUP_FAIL } from "../../utils/actions";
+import AuthContext from "../../context/authContext";
 import API from "../../utils/API";
 
 function SignUp() {
-  const [state, dispatch] = useStoreContext();
+  const { authenticated, user, token } = useContext(AuthContext);
 
   const nameRef = useRef("");
   const emailRef = useRef("");
@@ -33,21 +32,30 @@ function SignUp() {
     };
 
     // Attempt to register
-    API.signUpUser(newUser, config)
-      .then((res) => {
-        console.log("dispatched!", res.data);
-        dispatch({
-          type: SIGNUP_SUCCESS,
-          payload: res.data,
-        });
-        console.log("state", state);
-      })
-      .catch((err) => {
-        console.log(err);
-        dispatch({
-          type: SIGNUP_FAIL,
-        });
-      });
+    // API.signUpUser(newUser, config)
+    //   .then((res) => {
+    //     console.log("dispatched!", res.data);
+    //     dispatch({
+    //       type: SIGNUP_SUCCESS,
+    //       index,
+    //       payload: res.data,
+    //       user: newUser.name
+    //     });
+    //     console.log("state", state);
+        
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    
+    // if (state.isAuthenticated) {
+    //   return <Redirect to="/home" />;
+    // }
+    
+    // if (!state.isAuthenticated) {
+    //   alert("Didn't work!");
+    // }
+    
   };
   return (
     <div className="container">
@@ -117,7 +125,6 @@ function SignUp() {
                 <button
                   className="button is-light"
                   type="submit"
-                  disabled={state.loading}
                   // onClick={handleSubmit}
                 >
                   Sign Up

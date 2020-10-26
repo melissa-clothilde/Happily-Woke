@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import positive from "../../components/images/positive.png";
 import "./style.css";
-import { StoreProvider } from "../../utils/GlobalState";
+
 
 function Login() {
   const [isError, setIsError] = useState(false);

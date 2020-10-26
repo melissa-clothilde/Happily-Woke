@@ -6,10 +6,10 @@ import DeleteFooter from "../DeleteFooter";
 import Positive from "../FeelingDots/Postive";
 import Negative from "../FeelingDots/Negative";
 import Neutral from "../FeelingDots/Neutral";
-import { useStoreContext } from "../../utils/GlobalState";
+import authContext from "../../context/authContext";
 
 export const CardYesImage = ({ article }) => {
-  const [state, dispatch] = useStoreContext();
+  // const [state, dispatch] = useStoreContext();
 
   let location = useLocation();
 
@@ -49,7 +49,7 @@ export const CardYesImage = ({ article }) => {
 
         <p>{article.description}</p>
       </div>
-      {state.isAuthenticated ? (
+      {/* {state.isAuthenticated ? (
         location.pathname === "/" || location.pathname === "/home" ? (
           <SaveFooter article={article} />
         ) : (
@@ -57,7 +57,7 @@ export const CardYesImage = ({ article }) => {
         )
       ) : (
         ""
-      )}
+      )} */}
       {(() => {
         if (article.compoundScore >= 0.05) {
           return <Positive />;
@@ -72,7 +72,7 @@ export const CardYesImage = ({ article }) => {
 };
 
 export const CardNoImage = ({ article }) => {
-  const [state, dispatch] = useStoreContext();
+  // const [state, dispatch] = useStoreContext();
 
   let location = useLocation();
 
@@ -103,7 +103,7 @@ export const CardNoImage = ({ article }) => {
         </div>
       </div>
 
-      {state.isAuthenticated ? (
+      {/* {state.isAuthenticated ? (
         location.pathname === "/" || location.pathname === "/home" ? (
           <SaveFooter article={article} />
         ) : (
@@ -111,7 +111,7 @@ export const CardNoImage = ({ article }) => {
         )
       ) : (
         ""
-      )}
+      )} */}
 
       {(() => {
         if (article.compoundScore >= 0.05) {

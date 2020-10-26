@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./style.css";
 import positive from "../images/positive.png";
 import Modal from "../Modal";
-import { useStoreContext } from "../../utils/GlobalState";
+import authContext from "../../context/authContext";
 
 function Navbar({
   onChange,
@@ -15,7 +15,7 @@ function Navbar({
   setActive,
 }) {
   const [isActive, setisActive] = useState(false);
-  const [store] = useStoreContext();
+  // const [store] = useStoreContext();
   // console.log(store);
   return (
     <div>
@@ -62,7 +62,7 @@ function Navbar({
             >
               Mood
             </p>
-            {store.isAuthenticated ? (
+            {/* {store.isAuthenticated ? (
               <React.Fragment>
                 <strong>
                   {store && store.user ? `Welcome ${store.user.name}` : ""}
@@ -89,7 +89,7 @@ function Navbar({
                   Login
                 </a>
               </React.Fragment>
-            )}
+            )} */}
           </div>
           <div className="field is-grouped is-expanded search-bar">
             <p className="control is-expanded">
