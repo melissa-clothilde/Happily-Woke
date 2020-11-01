@@ -15,8 +15,8 @@ const App = () => {
   //   localStorage.setItem("token", action.payload.token);
   // }
   return (
-    <AuthContext.Provider value={{ authenticated, user, token }
-}>
+//     <AuthContext.Provider value={{ authenticated, user, token }
+// }>
       <Router>
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
@@ -24,7 +24,7 @@ const App = () => {
         <Route exact path="/home" component={Home} />
         <Route path="/saved" component={Saved} />
       </Router>
-    </AuthContext.Provider>
+    // </AuthContext.Provider>
   );
 };
 

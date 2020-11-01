@@ -62,34 +62,23 @@ function Navbar({
             >
               Mood
             </p>
-            {/* {store.isAuthenticated ? (
-              <React.Fragment>
-                <strong>
-                  {store && store.user ? `Welcome ${store.user.name}` : ""}
-                </strong>
-                <a className="navbar-item" href="/">
-                  Home
+
+            <a className="navbar-item" href="/">
+              Home
                 </a>
 
-                <a className="navbar-item" href="/saved">
-                  Saved
+            <a className="navbar-item" href="/saved">
+              Saved
                 </a>
-              </React.Fragment>
-            ) : (
-              ""
-            )}
-            {store.isAuthenticated ? (
-              <div className="navbar-item ">Logout</div>
-            ) : (
-              <React.Fragment>
-                <a className="navbar-item button mood-btn" href="/signup">
-                  Sign Up
+
+            {/* <div className="navbar-item ">Logout</div>
+
+            <a className="navbar-item button mood-btn" href="/signup">
+              Sign Up
                 </a>
-                <a className="navbar-item" href="/login">
-                  Login
-                </a>
-              </React.Fragment>
-            )} */}
+            <a className="navbar-item" href="/login">
+              Login
+                </a> */}
           </div>
           <div className="field is-grouped is-expanded search-bar">
             <p className="control is-expanded">
@@ -109,7 +98,7 @@ function Navbar({
           </div>
         </div>
       </nav>
-    </div>
+    </div >
   );
 }
 export default Navbar;
